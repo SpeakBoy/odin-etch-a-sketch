@@ -9,6 +9,10 @@ function createGrid(gridRows) {
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
             gridRow.appendChild(gridSquare);
+
+            gridSquare.addEventListener("mouseover", () => {
+                gridSquare.classList.add("filled-square");
+            });
         }
     }
 }
