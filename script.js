@@ -11,17 +11,21 @@ function createGrid(gridRows) {
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
             gridRow.appendChild(gridSquare);
+            let timesCalled = 0;
             gridSquare.addEventListener("mouseover", () => {
                 const randomRedValue = Math.floor(Math.random() * 256);
                 const randomGreenValue = Math.floor(Math.random() * 256);
                 const randomBlueValue = Math.floor(Math.random() * 256);
+                const opacityValue = lowerOpacity(++timesCalled);
                 gridSquare.style.backgroundColor =
-                    "RGB(" +
+                    "rgba(" +
                     randomRedValue +
                     ", " +
                     randomGreenValue +
                     ", " +
                     randomBlueValue +
+                    ", " +
+                    opacityValue +
                     ")";
             });
             gridContainer.appendChild(gridRow);
@@ -49,4 +53,10 @@ function createNewGrid() {
     } else {
         alert("Invalid input. Please try again.");
     }
+}
+
+function lowerOpacity(timesCalled) {
+    if (timesCalled <= 10) {
+        return parseFloat(1 - parseFloat(0.1 * timesCalled)).toFixed(1);
+    } else return 0.0;
 }
