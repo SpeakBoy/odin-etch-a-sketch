@@ -12,7 +12,17 @@ function createGrid(gridRows) {
             gridSquare.classList.add("grid-square");
             gridRow.appendChild(gridSquare);
             gridSquare.addEventListener("mouseover", () => {
-                gridSquare.style.backgroundColor = "black";
+                const randomRedValue = Math.floor(Math.random() * 256);
+                const randomGreenValue = Math.floor(Math.random() * 256);
+                const randomBlueValue = Math.floor(Math.random() * 256);
+                gridSquare.style.backgroundColor =
+                    "RGB(" +
+                    randomRedValue +
+                    ", " +
+                    randomGreenValue +
+                    ", " +
+                    randomBlueValue +
+                    ")";
             });
             gridContainer.appendChild(gridRow);
         }

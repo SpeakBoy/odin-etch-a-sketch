@@ -17,6 +17,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 800px;
+    background-color: black;
 }
 
 .grid-row {
@@ -31,4 +32,5 @@ body {
     min-width: 8px;
     min-height: 8px;
     flex: auto;
+    background-color: white;
 }
