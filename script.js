@@ -1,5 +1,4 @@
-const GRID_WIDTH = 16;
-const GRID_LENGTH = 16;
+const INITIAL_GRID_WIDTH = 16;
 
 const container = document.querySelector("#container");
 
@@ -14,15 +13,15 @@ function clearGrid()
     }
 }
 
-function createGrid()
+function createGrid(gridWidth)
 {
-    for (let i = 0; i < GRID_WIDTH; i++)
+    for (let i = 0; i < gridWidth; i++)
     {
         const row = document.createElement("div");
         row.classList.add("row");
         container.appendChild(row);
 
-        for (let j = 0; j < GRID_LENGTH; j++)
+        for (let j = 0; j < gridWidth; j++)
         {
             const tile = document.createElement("div");
             tile.classList.add("tile");
@@ -39,14 +38,15 @@ function changeTileColor(event)
 
 function changeGridSize()
 {
-    let gridWidth = +prompt(
+    
+    let gridWidth = Math.floor(+prompt(
         "Enter the number of squares per side for this new grid: "
-    );
+    ));
 
     gridWidth = gridWidth > 100 ? 100 : gridWidth;
 
     clearGrid();
-    createGrid();
+    createGrid(gridWidth);
 }
 
-createGrid();
+createGrid(INITIAL_GRID_WIDTH);
