@@ -33,7 +33,10 @@ function createGrid(gridWidth)
 
 function changeTileColor(event)
 {
-    event.target.style.backgroundColor = "black";
+    const red = Math.random() * 255;
+    const green = Math.random() * 255;
+    const blue = Math.random() * 255;
+    event.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
 function changeGridSize()
