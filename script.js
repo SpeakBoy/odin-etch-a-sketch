@@ -26,4 +26,18 @@ function changeTileColor(event)
     event.target.style.backgroundColor = "black";
 }
 
+function changeGridSize()
+{
+    let gridWidth = +prompt(
+        "Enter the number of squares per side for this new grid: "
+    );
+
+    gridWidth = gridWidth > 100 ? 100 : gridWidth;
+
+    // Clear grid
+    createGrid();
+}
+
+const changeGridSizeBtn = document.querySelector("button");
+
 createGrid();
