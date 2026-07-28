@@ -15,9 +15,15 @@ function createGrid()
         {
             const tile = document.createElement("div");
             tile.classList.add("tile");
+            tile.addEventListener("mouseenter", (e) => changeTileColor(e));
             row.appendChild(tile);
         }
     }
+}
+
+function changeTileColor(event)
+{
+    event.target.style.backgroundColor = "black";
 }
 
 createGrid();
