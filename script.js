@@ -10,6 +10,7 @@ function createGrid()
         for (let j = 0; j < GRID_LENGTH; j++)
         {
             const div = document.createElement("div");
+            div.classList.add("tile");
             container.appendChild(div);
         }
     }
