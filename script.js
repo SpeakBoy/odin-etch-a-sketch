@@ -25,7 +25,9 @@ function createGrid(gridWidth)
         {
             const tile = document.createElement("div");
             tile.classList.add("tile");
+            tile.style.opacity = 0;
             tile.addEventListener("mouseenter", (e) => changeTileColor(e));
+            tile.addEventListener("mouseenter", (e) => darkenTileColor(e));
             row.appendChild(tile);
         }
     }
@@ -37,6 +39,14 @@ function changeTileColor(event)
     const green = Math.random() * 255;
     const blue = Math.random() * 255;
     event.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+}
+
+function darkenTileColor(event)
+{
+    if (event.target.style.opacity < 1)
+    {
+        event.target.style.opacity = +event.target.style.opacity + 0.1;
+    }
 }
 
 function changeGridSize()

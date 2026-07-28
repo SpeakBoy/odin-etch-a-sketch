@@ -21,12 +21,7 @@ body {
     border-radius: 5px;
 }
 
-.tile {
-    border: 1px solid black;
-    display: flex;
-    flex-grow: 1;
-}
-
+.tile,
 .row {
     display: flex;
     flex-grow: 1;
