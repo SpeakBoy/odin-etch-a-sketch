@@ -1,10 +1,21 @@
 const GRID_WIDTH = 16;
 const GRID_LENGTH = 16;
 
+const container = document.querySelector("#container");
+
+const changeGridSizeBtn = document.querySelector("button");
+changeGridSizeBtn.addEventListener("click", changeGridSize);
+
+function clearGrid()
+{
+    while (container.firstChild)
+    {
+        container.removeChild(container.lastChild);
+    }
+}
+
 function createGrid()
 {
-    const container = document.querySelector("#container");
-
     for (let i = 0; i < GRID_WIDTH; i++)
     {
         const row = document.createElement("div");
@@ -34,10 +45,8 @@ function changeGridSize()
 
     gridWidth = gridWidth > 100 ? 100 : gridWidth;
 
-    // Clear grid
+    clearGrid();
     createGrid();
 }
-
-const changeGridSizeBtn = document.querySelector("button");
 
 createGrid();
